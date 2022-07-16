@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,19 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'MeUno';
+  constructor(private router: Router) {
+  }
+  goToRegistrate() {
+    this.router.navigate(['/', 'registrate']);
+  }
+  goToLogin() {
+    this.router.navigate(['/', 'login']);
+  }
+  goToEventos() {
+    this.router.navigate(['/', 'eventos']);
+  }
+  goToContacto() {
+    this.router.navigate(['/', 'contacto']);
+  }
+
 }

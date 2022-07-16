@@ -1,5 +1,4 @@
 import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule, Routes } from '@angular/router';
 import { AppComponent } from './app.component';
 import { ContactoComponent } from './contacto/contacto.component';
@@ -11,20 +10,20 @@ import { NoticiasComponent } from './noticias/noticias.component';
 import { RegistrateComponent } from './registrate/registrate.component';
 
 const routes: Routes = [
-  { path: "header", component: HeaderComponent, pathMatch: "full" },
-  { path: "footer", component: FooterComponent, pathMatch: "full" },
-  { path: "login", component: LoginComponent, pathMatch: "full" },
-  { path: "registrate", component: RegistrateComponent, pathMatch: "full" },
-  { path: "eventos", component: EventosComponent, pathMatch: "full" },
-  { path: "noticias", component: NoticiasComponent, pathMatch: "full" },
-  { path: "contacto", component: ContactoComponent, pathMatch: "full" }
+  { path: "header", component: HeaderComponent },
+  { path: "footer", component: FooterComponent },
+  { path: "login", component: LoginComponent },
+  { path: "registrate", component: RegistrateComponent },
+  { path: "eventos", component: EventosComponent },
+  { path: "noticias", component: NoticiasComponent },
+  { path: "contacto", component: ContactoComponent }
 
 
 ];
 
 @NgModule({
-  declarations: [AppComponent, LoginComponent, RegistrateComponent, HeaderComponent, FooterComponent, EventosComponent, ContactoComponent, NoticiasComponent],
-  imports: [BrowserModule, RouterModule],
+
+  imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 
 })
