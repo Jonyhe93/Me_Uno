@@ -1,28 +1,12 @@
 <div>
-  <ul class="nav navbar-nav">
-    <li>
-      <a (click)="goToLogin()">Login</a>
-    </li>
-    <li>
-      <a (click)="goToRegistrate()">Registrate</a>
-    </li>
-    <li>
-      <a (click)="goToEventos()">Eventos</a>
-    </li>
-  </ul>
-
-  <router-outlet> </router-outlet>
   <app-header></app-header>
-</div>
-<hr>
-<div>
-  <registrate-component></registrate-component>
 </div>
 <main>
   <div>
-    <app-eventos></app-eventos>
+    <!--  <app-eventos></app-eventos> -->
+    <router-outlet></router-outlet>
   </div>
 </main>
 <footer>
-
+  <app-footer></app-footer>
 </footer>

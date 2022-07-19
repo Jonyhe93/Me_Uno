@@ -8,10 +8,9 @@ import { HeaderComponent } from './header/header.component';
 import { RegistrateComponent } from './registrate/registrate.component';
 import { FooterComponent } from './footer/footer.component';
 import { EventosComponent } from './eventos/eventos.component';
-import { NoticiasComponent } from './noticias/noticias.component';
-import { ContactoComponent } from './contacto/contacto.component';
 import { LoginComponent } from './login/login.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
@@ -20,15 +19,16 @@ import { ReactiveFormsModule } from '@angular/forms';
     RegistrateComponent,
     FooterComponent,
     EventosComponent,
-    NoticiasComponent,
-    ContactoComponent,
-    LoginComponent
+    LoginComponent,
+    HomeComponent
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent]
