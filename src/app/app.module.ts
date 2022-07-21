@@ -4,13 +4,15 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HeaderComponent } from './header/header.component';
-import { RegistrateComponent } from './registrate/registrate.component';
-import { FooterComponent } from './footer/footer.component';
-import { EventosComponent } from './eventos/eventos.component';
-import { LoginComponent } from './login/login.component';
+import { HeaderComponent } from './components/header/header.component';
+import { RegistrateComponent } from './components/registrate/registrate.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { EventosComponent } from './components/eventos/eventos.component';
+import { LoginComponent } from './components/login/login.component';
 import { ReactiveFormsModule } from '@angular/forms';
-import { HomeComponent } from './home/home.component';
+import { HomeComponent } from './components/home/home.component';
+import { CalendarComponent } from './components/calendar/calendar.component';
+
 
 @NgModule({
   declarations: [
@@ -20,7 +22,10 @@ import { HomeComponent } from './home/home.component';
     FooterComponent,
     EventosComponent,
     LoginComponent,
-    HomeComponent
+    HomeComponent,
+    CalendarComponent,
+
+
 
   ],
   imports: [
@@ -28,8 +33,8 @@ import { HomeComponent } from './home/home.component';
     AppRoutingModule,
     HttpClientModule,
     ReactiveFormsModule,
-
   ],
+
   providers: [],
   bootstrap: [AppComponent]
 })
