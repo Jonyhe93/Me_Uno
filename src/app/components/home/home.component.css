@@ -1,0 +1,36 @@
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+.home{
+    background-color: darkslategrey;
+    width: 100%;
+    height: 100vh;
+}
+
+
+h1{
+    text-align: center;
+    color:chartreuse ;
+    padding: 100px;
+    font-family: 'Teko', sans-serif;
+    font-size: 5rem;
+
+}
+
+.form-select{
+    border-radius: 20px;
+    
+}
+.input-group-text{
+    transition: .2s;
+    cursor: pointer;
+    background-color:chartreuse;
+    
+}
+.form-control{
+    border-radius: 20px;
+   
+}
