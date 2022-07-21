@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Event } from 'src/app/interfaces/event.interface';
+import { EventService } from 'src/app/services/event.service';
 
 @Component({
   selector: 'app-eventos',
@@ -7,9 +9,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EventosComponent implements OnInit {
 
-  constructor() { }
+  arrEvents: Event[] = [];
+  constructor(private eventService: EventService) { }
 
-  ngOnInit(): void {
+  async ngOnInit(): Promise<any> {
+
+    try {
+      const response: any = await this.eventService.getAll();
+      this.arrEvents = response.data;
+      console.log(this.arrEvents)
+    } catch (err) {
+      console.log(err)
+    }
+
   }
 
 }

@@ -11,7 +11,7 @@ import { EventosComponent } from './components/eventos/eventos.component';
 import { LoginComponent } from './components/login/login.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HomeComponent } from './components/home/home.component';
-import { CalendarComponent } from './components/calendar/calendar.component';
+
 
 
 @NgModule({
@@ -23,7 +23,7 @@ import { CalendarComponent } from './components/calendar/calendar.component';
     EventosComponent,
     LoginComponent,
     HomeComponent,
-    CalendarComponent,
+
 
 
 

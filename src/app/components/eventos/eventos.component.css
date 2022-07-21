@@ -1,4 +1,4 @@
-body {
+.teunes {
     background-color: #212121;
     color: #4db1bc;
     margin: 0;
@@ -8,7 +8,7 @@ body {
     align-items: center;
     justify-items: center;
   }
-  body img {
+  .teunes img {
     width: 100%;
     height: 100vh;
     object-fit: cover;
@@ -17,7 +17,7 @@ body {
     opacity: .7;
     z-index: 0;
   }
-  body h1 {
+  .teunes h1 {
     margin: 0;
     padding-bottom: 6rem;
     grid-column: 1;
@@ -29,7 +29,7 @@ body {
     animation: glow 2s ease-in-out infinite alternate;
     text-align: center;
   }
-  body a {
+  .teunes a {
     font-family: 'Teko', sans-serif;
     color: #4db1bc;
     grid-column: 1;
@@ -38,6 +38,8 @@ body {
     justify-self: center;
     padding-bottom: 1rem;
   }
+  
+
   @keyframes glow {
     from {
       text-shadow: 0 0 20px #2d9da9;
