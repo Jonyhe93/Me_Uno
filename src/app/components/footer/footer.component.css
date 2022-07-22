@@ -110,3 +110,13 @@ footer p {
     text-align:center;
 }
 
+#tuId a i {
+    display: block;
+    color:aqua;
+    position: fixed;
+    bottom: 70px;
+    right: 20px;
+    font-size: 300%;
+
+}
+

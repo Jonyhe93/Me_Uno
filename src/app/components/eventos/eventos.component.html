@@ -7,7 +7,9 @@
     <article *ngFor="let event of arrEvents">
         <h3>{{event?.titulo}}</h3>
         <p>{{event?.fecha}}</p>
+        <p>{{event?.lugar}}</p>
         <p>{{event?.descripcion}}</p>
+
         <figure>
             <img src="{{event?.imagen}}" alt="">
         </figure>
