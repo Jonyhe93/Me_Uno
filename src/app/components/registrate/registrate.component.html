@@ -1,5 +1,5 @@
 <div class="container mt-3">
-    <form novalidate [formGroup]="modelForm" (ngSubmit)="getDataForm">
+    <form novalidate [formGroup]="modelForm" (ngSubmit)="getDataForm()">
         <div class=" my-2">
             <label for="name" class="form-label">Nombre</label>
             <input class="form-control" type="text" id="name" formControlName="name" placeholder="introduce tu nombre">

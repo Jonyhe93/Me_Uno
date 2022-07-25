@@ -15,13 +15,20 @@ export class EventosComponent implements OnInit {
   async ngOnInit(): Promise<any> {
 
     try {
-      const response: any = await this.eventService.getAll();
-      this.arrEvents = response.data;
-      console.log(this.arrEvents)
+      this.arrEvents = await this.eventService.getAll();
+
     } catch (err) {
       console.log(err)
     }
 
   }
+  async deleteEvent(pId: number | undefined): Promise<void> {
+    try {
+      const response = await this.eventService.delete(pId);
+      alert(response);
+    } catch (error) {
+      console.log(error)
+    }
 
+  }
 }

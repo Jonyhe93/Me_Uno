@@ -11,6 +11,7 @@ import { EventosComponent } from './components/eventos/eventos.component';
 import { LoginComponent } from './components/login/login.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HomeComponent } from './components/home/home.component';
+import { CreateEventComponent } from './components/create-event/create-event.component';
 
 
 
@@ -23,10 +24,7 @@ import { HomeComponent } from './components/home/home.component';
     EventosComponent,
     LoginComponent,
     HomeComponent,
-
-
-
-
+    CreateEventComponent
   ],
   imports: [
     BrowserModule,
