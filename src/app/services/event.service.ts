@@ -8,7 +8,7 @@ import { lastValueFrom } from 'rxjs';
 export class EventService {
 
 
-  baseUrl: string = "http://localhost:3000/api/eventos";
+  baseUrl: string = "http://localhost:3000/api/eventos/";
   constructor(private httpClient: HttpClient) { }
 
   getAll(): Promise<any> {
@@ -26,5 +26,8 @@ export class EventService {
   }
   getById(pId: any): Promise<any> {
     return lastValueFrom(this.httpClient.get<any>(this.baseUrl + pId))
+  }
+  update(pFormValue: any) : Promise<any>{ 
+    return lastValueFrom(this.httpClient.put<any>(this.baseUrl + pFormValue.id, pFormValue))
   }
 }

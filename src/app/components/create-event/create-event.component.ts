@@ -34,22 +34,28 @@ export class CreateEventComponent implements OnInit {
       if (id) {
         this.type = 'Modificar'
         const response = await this.eventService.getById(id)
-        const event: Event = response.data;
         this.formEvent = new FormGroup({
-          titulo: new FormControl(event.titulo, []),
-          imagen: new FormControl(event.imagen, []),
-          descripcion: new FormControl(event.descripcion, []),
-          fecha: new FormControl(event.fecha, []),
-          lugar: new FormControl(event.lugar, []),
-
+          titulo: new FormControl(response.titulo, []),
+          imagen: new FormControl(response.imagen, []),
+          descripcion: new FormControl(response.descripcion, []),
+          fecha: new FormControl(response.fecha, []),
+          lugar: new FormControl(response.lugar, []),
+          id: new FormControl(response.id, [])
         }, []);
       }
     })
   }
 
   async onSubmit(): Promise<void> {
-    const response: any = await this.eventService.create(this.formEvent.value)
+    if (this.formEvent.value.id) {
+      const response = await this.eventService.update(this.formEvent.value)
+      console.log(response)
+    } else {
+      
+      const response: any = await this.eventService.create(this.formEvent.value)
     console.log(response)
+    }
+    
   }
 
 }
