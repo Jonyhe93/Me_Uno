@@ -2,20 +2,23 @@
     <h1>Te Unes?</h1>
     <img src="https://images.unsplash.com/photo-1546707012-c46675f12716?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1349&q=80%27"
         alt="">
-    <button class="btn btn-danger" [routerLink]="['/create-event',event?.id]"><i class="fa-solid fa-eye"></i>Añadir
-        Evento</button>
+
 </section>
-<section class="eventos row g-0">
+<section class="eventos row g-0 m-5">
+    <button class="btn btn-danger m-2 p-3" [routerLink]="['/create-event']"><i class="fa-solid fa-eye"></i> Añadir
+        Evento</button>
     <article class="event col-md-" *ngFor="let event of arrEvents">
         <h3>{{event?.titulo}}</h3>
-        <p>{{event?.fecha}}</p>
-        <p>{{event?.lugar}}</p>
-        <p>{{event?.descripcion}}</p>
-
         <figure>
             <img src="{{event?.imagen}}" alt="">
         </figure>
-        <button class="btn btn-danger mx-2" [routerLink]="['/create-event', event?.id]"><i
+        <p>{{event?.descripcion}}</p>
+        <p>{{event?.fecha}}</p>
+        <p>{{event?.lugar}}</p>
+
+
+
+        <button class="btn btn-danger mx-2" [routerLink]="['/update', event?.id]"><i
                 class="fa-solid fa-pen-to-square"></i></button>
         <button class="btn btn-danger" (click)="deleteEvent(event?.id)"><i class="fa-solid fa-trash-can"></i></button>
     </article>

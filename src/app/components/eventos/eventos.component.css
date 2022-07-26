@@ -10,7 +10,7 @@
   }
   .teunes img {
     width: 100%;
-    height: 100vh;
+    height: 50vh;
     object-fit: cover;
     grid-column: 1;
     grid-row: 1;
@@ -38,6 +38,10 @@
     justify-self: center;
     padding-bottom: 1rem;
   }
+  .eventos{
+   font-size: 30px;
+  }
+
   
 
   @keyframes glow {

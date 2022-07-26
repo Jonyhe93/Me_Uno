@@ -1,21 +1,25 @@
-<div class="row">
-    <div class="col-8 offset-2">
-        <h2 class="mb-4"></h2>
-        <form [formGroup]="formEvent" (ngSubmit)="onSubmit()">
-            <div class="mb-3">
-                <label class="form-label">Titulo</label>
-                <input type="text" class="form-control" formControlName="titulo">
-                <label class="form-label">Descrpción</label>
-                <input type="text" class="form-control" formControlName="descripcion">
-                <label class="form-label">Lugar</label>
-                <input type="text" class="form-control" formControlName="lugar">
-                <label class="form-label">Fecha</label>
-                <input type="date" class="form-control" formControlName="fecha">
-                <label class="form-label">Imagen</label>
-                <input type="url" class="form-control" formControlName="imagen">
-            </div>
+<div class="container mt-5 mb-3  bg-light border-bottom  border-3  shadow">
+    <h1>{{type}} Evento</h1>
+    <hr>
+    <div class="row">
+        <div class="col-8 offset-2">
+            <h2 class="mb-4"></h2>
+            <form [formGroup]="formEvent" (ngSubmit)="onSubmit()">
+                <div class="mb-3">
+                    <label class="form-label">Titulo</label>
+                    <input type="text" class="form-control" formControlName="titulo">
+                    <label class="form-label">Descrpción</label>
+                    <input type="text" class="form-control" formControlName="descripcion">
+                    <label class="form-label">Lugar</label>
+                    <input type="text" class="form-control" formControlName="lugar">
+                    <label class="form-label">Fecha</label>
+                    <input type="date" class="form-control" formControlName="fecha">
+                    <label class="form-label">Imagen</label>
+                    <input type="url" class="form-control" formControlName="imagen">
+                </div>
 
-            <input type="submit" value="Enviar" class="btn btn-outline-success">
-        </form>
+                <input type="submit" [value]="type" class="btn btn-outline-success">
+            </form>
+        </div>
     </div>
 </div>

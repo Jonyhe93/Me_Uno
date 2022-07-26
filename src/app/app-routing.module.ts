@@ -13,6 +13,7 @@ const routes: Routes = [
   { path: "eventos", component: EventosComponent },
   { path: "home", component: HomeComponent },
   { path: "create-event", component: CreateEventComponent },
+  { path: "update/:idevent", component: CreateEventComponent },
   { path: "**", redirectTo: '/eventos' }
 
 

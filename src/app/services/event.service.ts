@@ -21,7 +21,10 @@ export class EventService {
   }
   delete(pId: number): Promise<any> {
     return lastValueFrom(
-      this.httpClient.delete<any>(this.baseUrl + "/eventos" + pId)
+      this.httpClient.delete<any>(`${this.baseUrl}/${pId}`)
     )
+  }
+  getById(pId: any): Promise<any> {
+    return lastValueFrom(this.httpClient.get<any>(this.baseUrl + pId))
   }
 }

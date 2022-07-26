@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Event } from 'src/app/interfaces/event.interface';
 import { EventService } from 'src/app/services/event.service';
 
@@ -10,25 +11,28 @@ import { EventService } from 'src/app/services/event.service';
 export class EventosComponent implements OnInit {
 
   arrEvents: Event[] = [];
-  constructor(private eventService: EventService) { }
+  constructor(private eventService: EventService, private router: Router) { }
 
   async ngOnInit(): Promise<any> {
 
     try {
       this.arrEvents = await this.eventService.getAll();
-
+      console.log(this.arrEvents)
     } catch (err) {
       console.log(err)
     }
 
   }
   async deleteEvent(pId: number | undefined): Promise<void> {
-    try {
-      const response = await this.eventService.delete(pId);
-      alert(response);
-    } catch (error) {
-      console.log(error)
+    if (pId !== undefined) {
+      try {
+        const response = await this.eventService.delete(pId);
+        if (response) {
+          window.location.href = "/eventos";
+        }
+      } catch (error) {
+        console.log(error)
+      }
     }
-
   }
 }
