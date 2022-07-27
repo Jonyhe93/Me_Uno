@@ -9,9 +9,10 @@ import { RegistrateComponent } from './components/registrate/registrate.componen
 import { FooterComponent } from './components/footer/footer.component';
 import { EventosComponent } from './components/eventos/eventos.component';
 import { LoginComponent } from './components/login/login.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HomeComponent } from './components/home/home.component';
 import { CreateEventComponent } from './components/create-event/create-event.component';
+import { MiPerfilComponent } from './components/mi-perfil/mi-perfil.component';
 
 
 
@@ -24,13 +25,16 @@ import { CreateEventComponent } from './components/create-event/create-event.com
     EventosComponent,
     LoginComponent,
     HomeComponent,
-    CreateEventComponent
+    CreateEventComponent,
+    MiPerfilComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     ReactiveFormsModule,
+    FormsModule
+
   ],
 
   providers: [],

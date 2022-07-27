@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
-import { UsuariosService } from 'src/app/services/usuarios.service';
+import { User } from 'src/app/interfaces/user.interface';
+import { UsersService } from 'src/app/services/users.service';
 
 @Component({
   selector: 'app-login',
@@ -13,11 +14,11 @@ export class LoginComponent implements OnInit {
   formulario: FormGroup;
 
   constructor(
-    private usuariosService: UsuariosService,
+    private usersService: UsersService,
     private router: Router
   ) {
     this.formulario = new FormGroup({
-      email: new FormControl<string | null>(null),
+      username: new FormControl<string | null>(null),
       password: new FormControl<string | null>(null),
     })
   }
@@ -25,17 +26,21 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  onSubmit() {
-    this.usuariosService.login(this.formulario.value)
-      .then(response => {
-        if (response.error) {
-          alert(response.error);
-        } else {
-          alert('Login correctísimo');
-          localStorage.setItem('token_gym', response.token);
-          this.router.navigate(['/clientes']);
-        }
-      }).catch(err => console.log(err));
+  async getDataForm(pForm: any) {
+
+    try {
+      const response: User | any = await this.usersService.login(pForm.value)
+      console.log(response);
+      if (response.token) {
+        localStorage.setItem('user', response.token)
+        window.location.href = "/mi-perfil";
+      }
+      else {
+        alert(response.error)
+      }
+    } catch (error) {
+      console.log(error)
+    }
   }
 
 }

@@ -5,6 +5,7 @@ import { LoginComponent } from './components/login/login.component';
 import { RegistrateComponent } from './components/registrate/registrate.component';
 import { HomeComponent } from './components/home/home.component';
 import { CreateEventComponent } from './components/create-event/create-event.component';
+import { MiPerfilComponent } from './components/mi-perfil/mi-perfil.component';
 
 const routes: Routes = [
   { path: "", pathMatch: "full", redirectTo: "home" },
@@ -14,6 +15,7 @@ const routes: Routes = [
   { path: "home", component: HomeComponent },
   { path: "create-event", component: CreateEventComponent },
   { path: "update/:idevent", component: CreateEventComponent },
+  { path: "mi-perfil", component: MiPerfilComponent },
   { path: "**", redirectTo: '/eventos' }
 
 

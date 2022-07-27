@@ -27,7 +27,7 @@ export class EventService {
   getById(pId: any): Promise<any> {
     return lastValueFrom(this.httpClient.get<any>(this.baseUrl + pId))
   }
-  update(pFormValue: any) : Promise<any>{ 
+  update(pFormValue: any): Promise<any> {
     return lastValueFrom(this.httpClient.put<any>(this.baseUrl + pFormValue.id, pFormValue))
   }
 }

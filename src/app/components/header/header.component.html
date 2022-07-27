@@ -3,6 +3,7 @@
         <a [routerLink]="['/home']"><img src="https://space.meuno.net/images/meuno/ME-UNONET-letras-moradas-1.png"></a>
 
         <div class="mx-3">
+            <button *ngIf="logado" routerLinkActive="active" [routerLink]="['/mi-perfil']">Mi Perfil</button>
             <button routerLinkActive="active" [routerLink]="['/home']">Inicio</button>
             <button routerLinkActive="active" [routerLink]="['/login']">Accede</button>
             <button routerLinkActive="active" [routerLink]="['/registrate']">Registrate</button>

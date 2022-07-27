@@ -5,15 +5,14 @@
 
 </section>
 <section class="eventos row g-0 m-5">
-    <button class="btn btn-danger m-2 p-3" [routerLink]="['/create-event']"><i class="fa-solid fa-eye"></i> Añadir
-        Evento</button>
+
     <article class="event col-md-" *ngFor="let event of arrEvents">
         <h3>{{event?.titulo}}</h3>
         <figure>
             <img src="{{event?.imagen}}" alt="">
         </figure>
         <p>{{event?.descripcion}}</p>
-        <p>{{event?.fecha | date:"dd/MM/YYYY"}}--{{event?.hora}}</p> 
+        <p>{{event?.fecha | date:"dd/MM/YYYY"}}--{{event?.hora}}</p>
         <p>{{event?.lugar}}</p>
 
 

@@ -1,49 +1,26 @@
 <div class="container mt-5 mb-3 bg-light border-bottom  border-3 shadow ">
-    <h1>Registrate</h1>
+    <h1>Registrarse</h1>
     <hr>
     <form novalidate [formGroup]="modelForm" (ngSubmit)="getDataForm()">
         <div class=" my-2 ">
-            <label for="name" class="form-label">Nombre</label>
-            <input class="form-control" type="text" id="name" formControlName="name" placeholder="introduce tu nombre">
+            <label for="username" class="form-label">Nombre de Usuario</label>
+            <input class="form-control" type="text" id="username" formControlName="username"
+                placeholder="introduce tu nombre de usuario">
 
-            <p class="error" *ngIf="checkControl('name', 'required')">El campo es obligatorio</p>
+            <p class="error" *ngIf="checkControl('username', 'required')">El campo es obligatorio</p>
 
-            <p class="error" *ngIf="checkControl('name', 'minlength')">La longitud minima de nombre tiene que ser 3
+            <p class="error" *ngIf="checkControl('username', 'minlength')">La longitud minima de nombre tiene que ser 3
                 caracteres</p>
 
         </div>
 
         <div class="my-2">
-            <label for="age" class="form-label">Edad</label>
-            <input class="form-control" type="number" id="age" formControlName="age" placeholder="introduce tu edad">
+            <label for="email" class="form-label">Email</label>
+            <input class="form-control" type="email" id="email" formControlName="email"
+                placeholder="introduce tu email">
 
-            <p class="error" *ngIf="checkControl('age', 'agevalidator')">{{
-                modelForm.get('age')?.errors?.['agevalidator'] }}</p>
-        </div>
-
-        <div class="my-2">
-            <label for="mail" class="form-label">Email</label>
-            <input class="form-control" type="email" id="mail" formControlName="mail" placeholder="introduce tu email">
-
-            <p class="error" *ngIf="checkControl('mail', 'required')">El campo email requerido</p>
-            <p class="error" *ngIf="checkControl('mail', 'pattern')">El campo email no es valido</p>
-        </div>
-
-        <div class="my-2">
-            <label for="dni" class="form-label">DNI</label>
-            <input class="form-control" type="text" id="dni" formControlName="dni" placeholder="introduce tu dni">
-            <p class="error" *ngIf="checkControl('dni', 'dnivalidator')">{{
-                modelForm.get('dni')?.errors?.['dnivalidator'] }}</p>
-        </div>
-
-        <div class="my-4">
-            <select class="form-select" formControlName="type">
-                <option value="">Selecciona un rango de Edad</option>
-                <option value="frontend">18 a 25</option>
-                <option value="backend">26 a 30</option>
-                <option value="fullstack">31 a 40</option>
-                <option value="fullstack">31 a 40</option>
-            </select>
+            <p class="error" *ngIf="checkControl('email', 'required')">El campo email requerido</p>
+            <p class="error" *ngIf="checkControl('email', 'pattern')">El campo email no es valido</p>
         </div>
 
         <div class="my-2">
@@ -66,8 +43,7 @@
 
         <p class="error" *ngIf="modelForm.hasError('passwordvalidator')">Las contraseñas no coinciden</p>
 
-        <!-- en el submit no hace falta formControlName -->
-        <input type="submit" class="btn btn-danger mt-2" value="Enviar" [disabled]="!modelForm.valid">
+        <input type="submit" class="btn btn-warning mt-3 mb-3" value="Enviar" [disabled]="!modelForm.valid">
 
 
 
